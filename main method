@@ -1,0 +1,40 @@
+
+import java.util.Date;
+import java.util.Scanner;
+public class TestAccount {
+	public static void main(String args[]){
+	
+	int id;
+	double balance;
+	double annualInterestRate;
+	Date dateCreated;
+	double money;
+	
+
+	Scanner input = new Scanner(System.in);
+	Account acc = new Account();
+	SavingsAccount save = new SavingsAccount();
+	CheckingAccount check = new CheckingAccount();
+	
+	
+	System.out.print("Please enter Account id : ");
+	id = input.nextInt();
+	System.out.print("Please enter Account balance : ");
+	balance = input.nextDouble();
+	System.out.print("Please enter Account annualInterestRate : ");
+	annualInterestRate = input.nextDouble();
+	
+	dateCreated = acc.getDateCreated();
+	acc.setid(id);
+	acc.setBalance(balance);
+	acc.setAnnualInterestRate(annualInterestRate);
+	
+	System.out.println(acc.tostring(acc.getid(),acc.getBalance(),acc.getannualInterestRate(),acc.getDateCreated()));
+	System.out.println();
+	System.out.println(check.tostring(acc.getid(),acc.getBalance(),acc.getannualInterestRate(),acc.getDateCreated()));
+	System.out.println();			
+	System.out.println(check.tostring(acc.getid(),acc.getBalance(),acc.getannualInterestRate(),acc.getDateCreated()));
+		
+	
+	}
+}
